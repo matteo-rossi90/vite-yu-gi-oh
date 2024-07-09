@@ -11,6 +11,11 @@
         align-items: center;
     }
 
+    @else if $type =='start' {
+        justify-content: flex-start;
+        align-items: center;
+    }
+
     @else if $type =='both' {
         justify-content: space-between;
         align-items: center;
