@@ -41,7 +41,7 @@ export default{
 <template>
   <AppHeader/>
   <main>
-    <AppMain :cards="store.cardList"/>
+    <AppMain/>
   </main>
 </template>
 

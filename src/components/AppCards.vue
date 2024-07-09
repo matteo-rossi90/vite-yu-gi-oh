@@ -37,7 +37,6 @@ import { store } from '../store';
     flex-basis: calc(100% / 5 - 20px);
     height: 400px;
     background-color: $background-main;
-    margin: 10px;
 
 }
 

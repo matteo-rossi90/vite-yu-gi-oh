@@ -8,10 +8,16 @@
 
 <template>
     <header>
+
+        <!-- logo -->
         <div id="logo">
-            <img src="../assets/logo.jpg" alt="">
+            <a href="#">
+                <img src="../assets/logo.jpg" alt="logo Yu-gi-oh">
+            </a>
         </div>
-        <h1>Yu-Gi-Oh API</h1>
+
+        <!-- titolo -->
+        <h2>Yu-Gi-Oh API</h2>
     </header>
 </template>
 

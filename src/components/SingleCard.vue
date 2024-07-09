@@ -12,7 +12,7 @@ export default{
     <!-- contenuto delle cards -->
     <img :src="info.card_images[0].image_url" :alt="info.name">
     <h4 class="name">{{ info.name }}</h4>
-    <h4 class="archetype">{{ info.archetype }}</h4>
+    <h4>{{ info.archetype }}</h4>
 </template>
 
 <style scoped lang="scss">
