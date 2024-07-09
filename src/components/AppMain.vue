@@ -11,8 +11,11 @@ import AppCards from './AppCards.vue';
 </script>
 
 <template>
+
     <section>
         <div id="container-wrapper" class="container">
+
+            <!-- contenitore bianco -->
             <div id="box-main">
                 <div id="title">Found 20 cards</div>
 
@@ -22,6 +25,7 @@ import AppCards from './AppCards.vue';
             </div>
         </div>
     </section>
+
 </template>
 
 <style scoped lang="scss">
@@ -31,7 +35,7 @@ import AppCards from './AppCards.vue';
 
 section{
     background-color: $background-main;
-    height: 700px;
+    // height: 700px;
 
     #container-wrapper{
         padding: 20px;

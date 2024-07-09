@@ -1,16 +1,29 @@
 <script>
+import SingleCard from './SingleCard.vue';
+
+//importare lo store
+import { store } from '../store';
 
     export default{
         name: 'AppCards',
+        components:{
+            SingleCard
+        },
+        data(){
+            return{
+                store
+            }
+        }
     }
 
 </script>
 
 <template>
 
-    <div class="cards">
-        <h4>Series</h4>
-        <h4>Type</h4>
+    <div v-for="(cards, index ) in store.cardList" :key="index" class="cards">
+        
+        <SingleCard :info="cards"/>
+        
     </div>
 
 </template>
@@ -22,9 +35,10 @@
 
 .cards{
     flex-basis: calc(100% / 5 - 20px);
-    height: 300px;
+    height: 400px;
     background-color: $background-main;
     margin: 10px;
+
 }
 
 
