@@ -1,0 +1,10 @@
+// inclusione font
+@import 'node_modules/@fontsource/roboto/index.css';
+
+//regole generali
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial;
+}
