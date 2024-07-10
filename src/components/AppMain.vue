@@ -25,14 +25,8 @@ import { store } from '../store';
     <section>
         <div id="container-wrapper" class="container">
 
-            <form action="#">
-                
-                <AppFilter/>
-                
-                <button>Reset</button>
-            </form>
-            
-
+            <AppFilter/>
+        
             <!-- contenitore bianco -->
             <div id="box-main">
                 <div id="title">Found 20 cards</div>
@@ -56,11 +50,6 @@ section{
 
     #container-wrapper{
         padding: 20px;
-
-        form{
-            padding: 10px 0;
-
-        }
     }
 
     #box-main{

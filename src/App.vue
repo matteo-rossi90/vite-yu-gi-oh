@@ -24,7 +24,7 @@ export default{
     getCards(){
       let endPoint = store.apiURL
       if(store.selectOptions !== ''){
-        endPoint += `&archetype=${store.selectOptions}`
+        endPoint += `&${store.apiNameOptions}=${store.selectOptions}`
       }
       axios.get(endPoint)
       .then(res => {
