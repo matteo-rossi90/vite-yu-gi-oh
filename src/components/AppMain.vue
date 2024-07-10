@@ -1,7 +1,8 @@
 <script>
 import AppCards from './AppCards.vue';
 import AppFilter from './AppFilter.vue';
-import AppLoader from './AppLoader.vue'
+import AppLoader from './AppLoader.vue';
+import Message from './Message.vue'
 
 import { store } from '../store';
 
@@ -11,7 +12,8 @@ import { store } from '../store';
         components:{
             AppCards,
             AppFilter,
-            AppLoader
+            AppLoader,
+            Message
         },
         data(){
             return{
@@ -32,7 +34,8 @@ import { store } from '../store';
         
             <!-- contenitore bianco -->
             <div id="box-main">
-                <div id="title">Found 20 cards</div>
+
+                <Message/>
 
                 <div id="box-cards">
                     <AppCards/>
@@ -61,13 +64,6 @@ section{
         background-color: $background-container;
         height: 100%;
         padding: 35px;
-
-        #title{
-            background-color: $primary;
-            color: $background-container;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
 
         #box-cards{
             @include flexbox(start);
