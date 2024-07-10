@@ -7,7 +7,7 @@ import { store } from '../store';
     export default{
         name: 'AppCards',
         components:{
-            SingleCard
+            SingleCard,
         },
         data(){
             return{
@@ -19,7 +19,6 @@ import { store } from '../store';
 </script>
 
 <template>
-
     <div v-for="(cards, index ) in store.cardList" :key="index" class="cards">
         
         <SingleCard :info="cards"/>

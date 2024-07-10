@@ -1,6 +1,7 @@
 <script>
 import AppCards from './AppCards.vue';
 import AppFilter from './AppFilter.vue';
+import AppLoader from './AppLoader.vue'
 
 import { store } from '../store';
 
@@ -9,7 +10,8 @@ import { store } from '../store';
         name: 'AppMain',
         components:{
             AppCards,
-            AppFilter
+            AppFilter,
+            AppLoader
         },
         data(){
             return{
@@ -23,7 +25,8 @@ import { store } from '../store';
 <template>
 
     <section>
-        <div id="container-wrapper" class="container">
+
+        <div v-if="!store.loading" id="container-wrapper" class="container">
 
             <AppFilter/>
         
@@ -35,7 +38,9 @@ import { store } from '../store';
                     <AppCards/>
                 </div>
             </div>
+
         </div>
+        <AppLoader v-else label="Yu-Gi-Oh" :isVisible="store.loading"/>
     </section>
 
 </template>

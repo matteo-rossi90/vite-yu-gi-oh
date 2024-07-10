@@ -13,7 +13,7 @@ export default{
   name: 'App',
   components:{
     AppHeader,
-    AppMain
+    AppMain,
   },
   data(){
     return{
@@ -22,6 +22,7 @@ export default{
   },
   methods:{
     getCards(){
+      store.loading = true;
       let endPoint = store.apiURL
       if(store.selectOptions !== ''){
         endPoint += `&${store.apiNameOptions}=${store.selectOptions}`
@@ -33,6 +34,9 @@ export default{
       })
       .catch(error => {
           console.error(error);
+        })
+      .finally(() => {
+          this.store.loading = false;
         });
     },
     getOptions(){
