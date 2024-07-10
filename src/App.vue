@@ -22,9 +22,13 @@ export default{
   },
   methods:{
     getCards(){
-      axios.get(this.store.apiURL)
+      let endPoint = store.apiURL
+      if(store.selectOptions !== ''){
+        endPoint += `&archetype=${store.selectOptions}`
+      }
+      axios.get(endPoint)
       .then(res => {
-        console.log(res.data);
+        console.log(res.data.data);
         this.store.cardList = res.data.data;
       })
       .catch(error => {
@@ -32,7 +36,6 @@ export default{
         });
     },
     getOptions(){
-
       axios.get(this.store.apiURLOptions)
       .then(response => {
         console.log(response.data);
@@ -42,8 +45,13 @@ export default{
     }
   },
   created(){
-  this.getCards();
-  this.getOptions();
+    this.getCards();
+    this.getOptions();
+  },
+   watch: {
+    'store.selectOptions': function (newVal, oldVal) {
+      this.getCards();
+    },
   }
 }
 </script>

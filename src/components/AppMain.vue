@@ -2,12 +2,19 @@
 import AppCards from './AppCards.vue';
 import AppFilter from './AppFilter.vue';
 
+import { store } from '../store';
+
 
     export default{
         name: 'AppMain',
         components:{
             AppCards,
             AppFilter
+        },
+        data(){
+            return{
+                store,
+            }
         }
     }
 
@@ -19,9 +26,10 @@ import AppFilter from './AppFilter.vue';
         <div id="container-wrapper" class="container">
 
             <form action="#">
-                <select name="select">
-                    <AppFilter/>
-                </select>
+                
+                <AppFilter/>
+                
+                <button>Reset</button>
             </form>
             
 
@@ -52,11 +60,6 @@ section{
         form{
             padding: 10px 0;
 
-            select{
-                padding: 5px;
-                width: 15%;
-                border-radius: 5px;
-            }
         }
     }
 

@@ -8,7 +8,12 @@ import { store } from '../store';
             return{
                 store,
             }
-    }
+        },
+        methods: {
+            updateSelectOptions(event) {
+                this.store.selectOptions = event.target.value;
+            },
+        }
 }
 
 </script>
@@ -18,12 +23,12 @@ import { store } from '../store';
 <template>
 
     <!-- menu a tendina per la selezione -->
-        
-    <option value="#" v-for="(items, index) in store.cardArchetype" :key="index">
-        {{ items.archetype_name }}
-    </option>
-        
-        
+    <select @change="updateSelectOptions">
+        <option value="" disabled selected>Seleziona un archetipo</option>
+        <option v-for="(item, index) in store.cardArchetype" :key="index" :value="item.archetype_name">
+        {{ item.archetype_name }}
+        </option>
+    </select>
 
 
 </template>
@@ -32,6 +37,12 @@ import { store } from '../store';
 @use '../style/general.scss' as *;
 @use '../style/partials/mixins' as *;
 @use '../style/partials/variables' as*;
+
+select{
+    padding: 5px;
+    width: 15%;
+    border-radius: 5px;
+}
 
 
 </style>
