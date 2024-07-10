@@ -16,6 +16,9 @@ import { store } from '../store';
              resetSelect(){
                 //svuotare il campo della ricerca
                 store.selectOptions = "";
+
+                //ripristinare la scritta di default
+                this.$refs.selectRef.value = "";
             }
         }
 }
@@ -26,10 +29,10 @@ import { store } from '../store';
 
 <template>
 
-    <!-- menu a tendina per la selezione -->
+    <!-- menu a tendina per la selezione --> 
     <form action="#">
 
-        <select @change="addSelect">
+        <select ref="selectRef" @change="addSelect">
 
             <option value="" disabled selected>Seleziona un archetipo</option>
             <option v-for="(item, index) in store.cardArchetype" :key="index" :value="item.archetype_name">
