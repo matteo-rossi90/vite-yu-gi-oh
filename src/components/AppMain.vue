@@ -1,10 +1,13 @@
 <script>
 import AppCards from './AppCards.vue';
+import AppFilter from './AppFilter.vue';
+
 
     export default{
         name: 'AppMain',
         components:{
-            AppCards
+            AppCards,
+            AppFilter
         }
     }
 
@@ -15,19 +18,12 @@ import AppCards from './AppCards.vue';
     <section>
         <div id="container-wrapper" class="container">
 
-            <!-- menu a tendina per la selezione -->
             <form action="#">
-
-                <select name="Select">
-                    <option value="#">Nessun tipo</option>
-                    <option value="Alien">Alien</option>
-                    <option value="inferboble_arm">Infernoble Arm</option>
-                    <option value="noble_knight">Noble Knight</option>
-                    <option value="melodius">Melodius</option>
-                    <option value="archfiend">Archfiend</option>
+                <select name="select">
+                    <AppFilter/>
                 </select>
-                
             </form>
+            
 
             <!-- contenitore bianco -->
             <div id="box-main">

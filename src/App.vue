@@ -30,10 +30,20 @@ export default{
       .catch(error => {
           console.error(error);
         });
+    },
+    getOptions(){
+
+      axios.get(this.store.apiURLOptions)
+      .then(response => {
+        console.log(response.data);
+        this.store.cardArchetype = response.data;
+        console.log(this.store.cardArchetype)
+      })
     }
   },
   created(){
   this.getCards();
+  this.getOptions();
   }
 }
 </script>
